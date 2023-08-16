@@ -13,7 +13,7 @@ const page = async () => {
     username: userInfo?.username || user?.username,
     name: userInfo?.name || user?.firstName || '',
     bio: userInfo?.bio || '',
-    image: userInfo?.image : user.imageUrl
+    image: userInfo?.image || user.imageUrl,
   }
 
   return (
@@ -23,10 +23,7 @@ const page = async () => {
         Complete your profile to use Threads
       </p>
       <section className='mt-9 bg-dark-2 p-10'>
-        <AccountProfile
-          user={userData}
-          btnTitle='Continue'
-        ></AccountProfile>
+        <AccountProfile user={userData} btnTitle='Continue'></AccountProfile>
       </section>
     </main>
   )
